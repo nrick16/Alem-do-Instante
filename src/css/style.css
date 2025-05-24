@@ -1,0 +1,440 @@
+@font-face {
+    font-family: 'Golden-State';
+    src: url('../fonts/golden_state_serif/GoldenStateSerifPERSONAL-Black.otf');
+}
+
+@font-face {
+    font-family: 'Golden-State-Regular';
+    src: url('../fonts/golden_state_serif/GoldenStateSerifPERSONAL-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Black-Hunters';
+    src: url('../fonts/black_runters/Black\ Runters.otf');
+}
+
+@font-face {
+    font-family: 'Vogue';
+    src: url('../fonts/vogue/Vogue.ttf');
+}
+
+@font-face {
+    font-family: 'Against';
+    src: url('../fonts/against/against\ regular.otf');
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "header   header   header   header"
+        "hero     hero     hero     hero"
+        "about    about    about    about"
+        "services services services services"
+        "projects projects projects projects"
+        "footer   footer   footer   footer";
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: var(--main-color);
+}
+
+h3 {
+    font-family: 'Against', 'Black-Hunters', sans-serif;
+
+}
+
+/* ------------------------------------------- HEADER */
+.header {
+    grid-area: header;
+    background-color: var(--white);
+    font-family: 'Against', 'Black-Hunters', 'Vogue', sans-serif;
+    /* border-radius: 0 5px 85px 85px; */
+}
+
+.header .header-container {
+    display: flex;
+    padding: 20px 40px;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 75px;
+}
+
+.header img {
+    width: 300px;
+}
+
+
+/* ------------------------------------------- END HEADER */
+
+/* ------------------------------------------- HERO */
+.hero {
+    grid-area: hero;
+    grid-template-columns: 1fr 1fr;
+    height: 80vh;
+    background-color: var(--main-color);
+    background-image: url(../images/bg-fade-2.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+
+.hero-container-01 {
+    max-width: 800px;
+}
+
+.hero-container-02 {
+    margin-top: 80px;
+    max-width: 600px;
+    padding: 2% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #ac59161b;
+    border-radius: 25px;
+    font-family: 'Against', 'Black-Hunters', sans-serif;
+
+}
+
+.hero h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 8rem;
+    /* background-color: rgba(0, 0, 0, 0.705); */
+    color: var(--third-color);
+    padding: 20px;
+    border-radius: 15px;
+    margin-left: 20px;
+}
+
+.hero p {
+    font-size: 2.2rem;
+    color: var(--fifty-color);
+    font-family: sans-serif;
+}
+
+.hero h2 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: var(--third-color);
+    padding: 20px 0;
+}
+
+.hero a {
+    padding: 20px 0;
+    width: 300px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--main-color);
+    background-color: var(--third-color);
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.hero a:hover {
+    color: var(--fifty-color);
+    background-color: var(--main-color);
+}
+
+.hero:after {
+    content: url('../images/arrow.png');
+    height: 150px;
+    bottom: 40px;
+    position: absolute;
+    animation: downarrow 1.8s infinite alternate ease-in-out;
+}
+
+@-webkit-keyframes downarrow {
+    0% {
+        -webkit-transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    100% {
+        -webkit-transform: translateY(0.8em);
+        opacity: 0.9;
+    }
+}
+
+@media(max-width: 425px) {
+    .hero {
+        height: 95vh;
+        display: flow-root;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-container-01 {
+        text-align: center;
+    }
+
+    .hero-container-02 {
+        margin-top: 0;
+        background-color: #8b593096;
+        border-radius: 0;
+    }
+    .hero-container-02 p{
+        color: var(--second-color)
+    }
+    .hero-container-02 h2{
+        color: var(--white)
+    }
+
+    .hero::after{
+        height: 20px;
+        margin-left: 150px;
+    }
+}
+
+/* ------------------------------------------- END HERO */
+
+/* ------------------------------------------- ABOUT */
+.about {
+    grid-area: about;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #fff;
+    max-width: var(--max-width-size);
+    margin: 0 auto;
+}
+
+.about .item {
+    padding: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-image: url('../images/bg-fade-3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.about .item h3 {
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.about .item p {
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin: 30px 0;
+}
+
+.about .item .btn-know-more {
+    font-size: 1.6rem;
+    align-self: flex-start;
+    /* Tirando a largura total do botão e ajustando em si mesmo*/
+    background-color: var(--fifty-color);
+}
+
+.about .item .btn-know-more:hover {
+    font-weight: 700;
+    opacity: 0.6;
+}
+
+.about .image {
+    height: 100%;
+    right: 100%;
+}
+
+.about .image.right {
+    background: url('../images/about-01.jpg') center no-repeat;
+    background-size: cover;
+}
+
+.about .image.left {
+    background: url('../images/about-02.jpg') center no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 425px) {
+    .about .item {
+        text-align: center;
+    }
+
+    .about .item h3 {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .about .item .btn-know-more{
+        margin-left: 25px;
+    }
+}
+
+/* ------------------------------------------- END ABOUT */
+
+/* ------------------------------------------- SERVICES*/
+.services {
+    grid-area: services;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.services .service {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.services .service img {
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.services .service h3 {
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
+.services .service p {
+    font-size: 2rem;
+    font-weight: 400;
+    max-width: 400px;
+    margin: 20px auto 0;
+    line-height: 25px;
+}
+
+.services .service:nth-child(1),
+.services .service:nth-child(4) {
+    background-color: var(--main-color);
+    background-image: url('../images/bg-fade.png');
+    background-size: cover;
+}
+
+.services .service:nth-child(2),
+.services .service:nth-child(3) {
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
+@media(max-width: 425px) {
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .services .service h3 {
+        font-size: 1.8rem;
+    }
+
+    .services .service p {
+        font-size: 1.5rem;
+        max-width: 90%;
+    }
+}
+
+/* ------------------------------------------- END SERVICES */
+
+/* ------------------------------------------- PROJECTS*/
+.projects {
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.projects img {
+    height: 100%;
+    transition: 0.3s;
+}
+
+.projects a:hover img {
+    opacity: 0.8;
+}
+
+.projects a:hover .vm {}
+
+@media(max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media(max-width: 425px) {
+    .projects {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+/* ------------------------------------------- FOOTER */
+.footer {
+    grid-area: footer;
+    display: flex;
+    background-color: var(--main-color);
+    background-image: url('../images/bg-fade-2.png');
+    background-size: cover;
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.footer h4 {
+    font-weight: 700;
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    color: var(--second-color);
+}
+
+.footer nav {
+    margin: 50px 0;
+}
+
+.footer nav ul {
+    display: flex;
+    justify-content: center;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.footer nav ul li a {
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 20px;
+    transition: 0.3s;
+    color: var(--second-color);
+
+}
+
+.footer nav ul li a:hover {
+    font-weight: 700;
+    color: var(--third-color);
+}
+
+.footer .social i {
+    font-size: 3rem;
+    transition: 0.3s;
+}
+
+.footer .social a {
+    margin: 20px;
+    color: var(--second-color);
+}
+
+.footer .social a:hover {
+    color: var(--third-color);
+}
+
+.footer .credits a{
+    font-weight: 400;
+    text-decoration: underline;
+}
+/* ------------------------------------------- END FOOTER */
